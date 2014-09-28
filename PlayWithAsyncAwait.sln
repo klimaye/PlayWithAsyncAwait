@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayWithAsyncAwait", "PlayWithAsyncAwait\PlayWithAsyncAwait.csproj", "{EF2D9C0C-FEF3-45A3-AEC9-028546AC2279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIWithAsyncAwait", "UIWithAsyncAwait\UIWithAsyncAwait.csproj", "{9C5F4538-A44B-49E7-9F45-6F04A0B66C92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C5F4538-A44B-49E7-9F45-6F04A0B66C92}.Debug|x86.ActiveCfg = Debug|x86
+		{9C5F4538-A44B-49E7-9F45-6F04A0B66C92}.Debug|x86.Build.0 = Debug|x86
+		{9C5F4538-A44B-49E7-9F45-6F04A0B66C92}.Release|x86.ActiveCfg = Release|x86
+		{9C5F4538-A44B-49E7-9F45-6F04A0B66C92}.Release|x86.Build.0 = Release|x86
+		{EF2D9C0C-FEF3-45A3-AEC9-028546AC2279}.Debug|x86.ActiveCfg = Debug|x86
+		{EF2D9C0C-FEF3-45A3-AEC9-028546AC2279}.Debug|x86.Build.0 = Debug|x86
+		{EF2D9C0C-FEF3-45A3-AEC9-028546AC2279}.Release|x86.ActiveCfg = Release|x86
+		{EF2D9C0C-FEF3-45A3-AEC9-028546AC2279}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = UIWithAsyncAwait\UIWithAsyncAwait.csproj
+	EndGlobalSection
+EndGlobal
