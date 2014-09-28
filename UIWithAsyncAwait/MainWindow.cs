@@ -15,14 +15,18 @@ public partial class MainWindow: Gtk.Window
 		Application.Quit ();
 		a.RetVal = true;
 	}
-
-	protected void OnButton1Clicked (object sender, EventArgs e)
+	/// <summary>
+	/// event handler marked as async. 
+	/// </summary>
+	/// <param name="sender">Sender.</param>
+	/// <param name="e">E.</param>
+	protected async void OnButton1Clicked (object sender, EventArgs e)
 	{
-		Log ("1. Task started");
-		Task task = new Task(ProcessDataAsync);
-		task.Start ();
-		task.Wait ();
-		Log ("3. Task scheduled");
+		Task<int> promise = SomethingThatTakesTime ();
+		Log ("1. Promise created");
+		Log("2. Please wait patiently " + "while I do something important.");
+		int result = await promise;
+		Log("5. result of long running task was {0}",result);
 	}
 
 	async Task<int> SomethingThatTakesTime ()
@@ -33,19 +37,17 @@ public partial class MainWindow: Gtk.Window
 		{
 			//Console.WriteLine("doing something else {0}",counter--);
 			Log("4. doing something else {0}",counter--);
+			//Note : await can only be called in a method that is marked as async
 			await Task.Delay(500);
 		}
 		return 20;
 	}
-
-	async void ProcessDataAsync()
-	{
-		Task<int> promise = SomethingThatTakesTime ();
-		Log("2. Please wait patiently " + "while I do something important.");
-		int result = await promise;
-		Log("5. result of long running task was {0}",result);
-	}
-
+	/// <summary>
+	/// given that async doesn't create threads, I am able to manipulate the ui directly without having to
+	// invoke the ui thread.
+	/// </summary>
+	/// <param name="format">Format.</param>
+	/// <param name="values">Values.</param>
 	private void Log(string format, params object[] values)
 	{
 		string text = string.Format(format, values);

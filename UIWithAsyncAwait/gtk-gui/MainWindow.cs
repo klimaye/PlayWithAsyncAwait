@@ -81,6 +81,7 @@ public partial class MainWindow
 		this.vbox1.Add (this.logLabel);
 		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.logLabel]));
 		w6.Position = 1;
+		w6.Expand = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
